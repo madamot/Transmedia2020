@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="post-entry">
+  <div class="blog-entry">
     <h1>{{ blog.title }}</h1>
     <h4>{{ blog.author }}</h4>
     <h4>{{ blog.date }}</h4>
     <p>{{ blog.body }}</p>
   </div>
   <a href="{% url 'blog_edit' blog.pk %}">+ Edit Blog Post</a>
+  <a href="{% url 'blog_delete' blog.pk %}">+ Delete Blog Post</a>
 {% endblock content %}
