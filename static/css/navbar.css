@@ -1,0 +1,32 @@
+body{
+	background-color: #000E21; 
+}
+section{
+  background-color: #000E21;
+  height: auto;
+}
+.container{
+  max-width: 1200px;
+  text-align: center;
+  margin: auto;
+}
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background: #00193B;
+}
+.uk-navbar-dropdown{
+	background: #00193B;
+}
+.uk-navbar-nav li a{
+	color: white;
+	font-size: 15px;
+	font-family: 'Rubik', sans-serif;
+}
+.uk-dropdown-nav li a{
+	color: black;
+}
+
+.uk-iconnav{
+	float: right;
+	font-size: 20px;
+	color: white;
+}

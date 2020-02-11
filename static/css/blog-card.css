@@ -1,0 +1,40 @@
+.uk-card-title{
+  color: black;
+  font-weight: bold;
+  text-align: left;
+  font-family: 'Muli', sans-serif;
+}
+.uk-text-meta{
+  color: black;
+  text-align: left;
+  font-family: 'Muli', sans-serif;
+}
+.uk-card-body{
+  color: black;
+  text-align: left;
+  font-family: 'Muli', sans-serif;
+}
+.blog-title{
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  font-family: 'Muli', sans-serif;
+}
+.blog-body{
+  font-size: 15px;
+  color: black;
+  font-family: 'Muli', sans-serif;
+}
+.uk-card-footer{
+  color: black;
+  text-align: left;
+  font-family: 'Muli', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+.profile-info{
+  float: right;
+  color: black;
+  padding-right: 15px;
+  font-family: 'Muli', sans-serif;
+}

@@ -6,23 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Digital Media</title>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
+  <link rel="icon" href="{% static 'img/logo.png' %}">
+
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/blog-card.css' %}">
+  <link rel="stylesheet" href="{% static 'css/blog-post.css' %}">
+
 </head>
 <body>
-  <header>
-    <div class="nav-left">
-      <h1><a href="{% url 'home' %}">Digital Media</a></h1>
-      <h1><a href="{% url 'blog' %}">See what we've been up to!</a></h1>
+  <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+    <nav class="uk-navbar-container uk-margin" uk-navbar>
+    <div class="uk-navbar-center">
+    <div class="uk-navbar-center-left"><div>
+        <ul class="uk-navbar-nav">
+          <li><a href="{% url 'home' %}">Homepage</a></li>
+          <li><a href="{% url 'blog' %}">Blog</a></li>
+        </ul>
     </div>
-    <div class="nav-right">
-      <a href="{% url 'post_new' %}">+ New Blog Post</a>
     </div>
-  </header>
-  <div>
+    <div>
+    <a class="uk-navbar-item uk-logo" href="#">
+      <img src="{% static 'img/logo.png' %}" height="50" width="50">
+    </a>
+    <div class="uk-navbar-center-right"><div>
+        <ul class="uk-navbar-nav">
+          <li><a href="#">Yearbook</a></li>
+          <li><a href="#">Exhibition Info</a>
+        <div class="uk-navbar-dropdown">
+        <ul class="uk-nav uk-navbar-dropdown-nav">
+          <li><a href="#">Times</a></li>
+          <li><a href="#">Map</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+    </div>
+        </li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+  </div>
+  
+  <section>
+    <div class="container">
     {% block content %}
     {% endblock content %}
-  </div>
-
+    </div>
+  </section>
+  <script src="{% static 'js/uikit.min.js' %}"></script>
+  <script src="{% static 'js/uikit-icons.min.js' %}"></script>
 </body>
 </html>
