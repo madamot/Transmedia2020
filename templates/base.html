@@ -25,10 +25,22 @@
     <div class="uk-navbar-center">
     <div class="uk-navbar-center-left"><div>
         <ul class="uk-navbar-nav">
-          <li><a href="{% url 'home' %}">Homepage</a></li>
-          <li><a href="{% url 'blog' %}">Blog</a></li>
+          <li><a href="">Homepage</a></li>
+          <li><a href="{% url 'blog_list' %}">Blog</a></li>
         </ul>
     </div>
+    {% if user.is_authenticated %}
+      Hi {{ user.firstname }}!
+      <p><a href="{% url 'logout' %}">Log Out</a></p>
+      <p><a href="{% url 'password_change' %}">Change password</a></p>
+      <div class="nav-right">
+        <a href="{% url 'blog_new' %}">+ New Blog Post</a>
+      </div>
+    {% else %}
+      <p>You are not logged in</p>
+      <a href="{% url 'login' %}">Log In</a> |
+      <a href="{% url 'signup' %}">Sign Up</a><br><br>
+    {% endif %}
     </div>
     <div>
     <a class="uk-navbar-item uk-logo" href="#">
@@ -51,7 +63,7 @@
     </div>
     </nav>
   </div>
-  
+
   <section>
     <div class="container">
     {% block content %}

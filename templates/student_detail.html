@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="blog-entry">
+    <h1>{{ user.firstname }} {{ user.lastname }}</h1>
+    <h4>{{ user.email }}</h4>
+    <a target="_blank" href="{{ user.portfolio }}"><h4>{{ user.portfolio }}</h4></a>
+    <p>{{ user.about }}</p><br>
+    <p>{{ user.discipline }}</p><br>
+    <p>{{ user.year }}</p><br>
+  </div>
+{% endblock content %}

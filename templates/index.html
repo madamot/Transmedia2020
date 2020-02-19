@@ -1,13 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Digital Media</title>
-</head>
-<body>
-  <h1>Digital Media Homepage</h1>
-  <h1><a href="{% url 'blog' %}">See what we've been up to!</a></h1>
-</body>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Homepage</title>
+
+	<link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+	<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <body>
+    	<div class="container uk-padding">
+    		<div class="wrapper">
+			<a href=""><img src="../static/img/logo.png" style="height: 90%; width: 100%;"></a>
+			</div>
+		</div>
+		<div id="title" class="title">
+			<a href="{% url 'blog_list' %}" style="text-decoration: none;"><h1 class="animated fadeIn">Explore</h1></a>
+			<a href="" style="text-decoration: none;"><h1 class="animated fadeIn delay-1s">Experience</h1></a>
+			<a href="" style="text-decoration: none;"><h1 class="animated fadeIn delay-2s">Enlighten</h1></a>
+		</div>
+		<script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+    </body>
 </html>

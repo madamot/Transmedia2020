@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Students{% endblock title %}
+
+{% block content %}
+
+  {% for user in object_list %}
+
+    <div class="blog-entry">
+      <a href="{% url 'student_detail' user.pk %}"><div>
+        <span>{{ user.firstname }}</span>
+        <span>{{ user.lastname }}</span><br><br>
+      </div></a>
+    </div>
+    <br />
+    {% endfor %}
+{% endblock content %}
