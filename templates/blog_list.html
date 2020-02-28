@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog{% endblock title %}
+
+{% block content %}
+{% for blog in object_list %}
+    <div class="uk-padding-small">
+    <div class="uk-card uk-card-default uk-width-1-1@m">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                	<a href="#">
+                    <img class="uk-border-circle" width="50" height="50" src="../static/img/profile.png">
+                        </a>
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">
+                    {{ blog.author }}</h3>
+                    <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">
+                    {{ blog.date }}</time></p>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-card-body">
+                <h1 class="uk-heading-divider blog-title">
+                {{ blog.title }}</h1>
+                <a href="{% url 'blog_detail' blog.pk %}" class="uk-button uk-button-text">Read more</a>
+            </div>
+            <div class="uk-card-footer">
+                <p class="profile-info">Second Year | Developer</p>
+        	</div>
+    </div>
+    </div>
+{% endfor %}
+{% endblock content %}
