@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+* {-webkit-font-smoothing: antialiased;}
+header, section {
+  height:100%;
+  height:100vh;
+}
+#logo {
+  z-index:999999;
+  position:absolute;
+  width:153px;
+  left:50vw;
+  margin-left:-77px;
+  top:30vh;
+  position:fixed;
+}
+#scroll {
+  position:absolute;
+  bottom:15px;
+  left:50vw;
+  margin-left:-44px;
+}
+</style>
+<header>
+  <div id="logo" data-0="width:153px;left:50vw;margin-left:-77px;top:300px;position:fixed;" data-900="width:51px;left:50vw;margin-left:-25px;top:0;" data-top="position:fixed;">
+    <img class="center-block img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/0/02/SVG_logo.svg">
+			  </div>
+  <a id="scroll" class="smoothscroll" href="#how">Smooth scroll</a>
+</header>
+
+
+
+
+
+
+<div class="nav-wrapper" style="height:51px;"> <!-- Prevents content jump when navbar becomes fixed -->
+  <nav id="nav" class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<section>
+  <div class="container">
+    <h2 class="page-header">An SVG that shrinks into the Bootstrap navbar</h2>
+    <p class="lead">
+      
+    </p>  
+    <h3>Made possible by:</h3>
+    <ul class="lead">
+      <li><a href="https://prinzhorn.github.io/skrollr/">skrollr</a> by <a href="https://github.com/Prinzhorn">Alexander Prinzhorn</a></li>
+      <li>A point in the right direction by <a href="http://www.mattdempsey.com">Matt Dempsey</a> (Thanks man!)</li>
+    </ul>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h2 id="how" class="page-header">How it was done:</h2>
+    <p>This was stuck before the closing <code>&lt;/body&gt;</code></p>
+    <pre>
+      &lt;script src="js/skrollr.min.js"&gt;&lt;/script&gt;
+      &lt;script type="text/javascript"&gt;
+          var s = skrollr.init();
+      &lt;/script&gt;
+    </pre>
+    <p>And the the element to be animated had it's HTML5 data- attributes added like so:</p>
+    <pre>
+      &lt;div id="logo" data-0="width:153px;left:50vw;margin-left:-77px;top:30vh;position:fixed;" data-800="width:51px;left:50vw;margin-left:-25px;top:0;" data-top="position:fixed;"&gt;
+    </pre>
+    <p>Easy peasy!</p>
+    <h3>Learn more about skrollr:</h3>
+    <ul>
+      <li><a href="https://prinzhorn.github.io/skrollr/">Demo page</a></li>
+      <li><a href="https://github.com/Prinzhorn/skrollr">GitHub page</a></li>
+    </ul>
+  </div>
+</section>
+<!-- SKROLLR -->
+<script src="//prinzhorn.github.io/skrollr/dist/skrollr.min.js"></script>
+<script type="text/javascript">
+    var s = skrollr.init();
+</script>
+<!-- SMOOTHSCROLL -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">$(document).ready(function(){$("a.smoothscroll").on("click", function(event){$("html, body").animate({scrollTop: $($(this).attr("href")).offset().top + "px"},{duration: 1200, easing: "swing"}); return false;});});</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+  var navpos = $('#nav').offset();
+  console.log(navpos.top);
+    $(window).bind('scroll', function() {
+      if ($(window).scrollTop() > navpos.top) {
+        $('#nav').addClass('navbar-fixed-top');
+       }
+       else {
+         $('#nav').removeClass('navbar-fixed-top');
+       }
+    });
+});
+</script>
+
+</body>
+</html>
