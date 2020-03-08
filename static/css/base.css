@@ -1,1 +1,12 @@
-
+body{
+  background-color: #000F30;
+}
+.page{
+  background-color: #000F30;
+}
+.container{
+  max-width: 1000px;
+  padding-top: 50px;
+  text-align: center;
+  margin: auto;
+}

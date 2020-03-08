@@ -1,43 +1,21 @@
-html, body {
-    height: 100%;
-    margin: 0 0.5em;
- }
-body {
-    background-color: #000000;
-    height: 150%;
- }
-#header {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    width: 100%;
-    border-bottom: 0.062em solid #000000;
-    background-image: radial-gradient(circle, #90ABD3, #224578, #001533, #000000);;
- }
-#header img {
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
- }
-.grow {
-  padding: 2.8745em 0;
-    transition: 0.5s ease-in-out; 
- }
-.grow img { 
-    width: 35.75em; 
-    transition: 0.5s ease-in-out; 
- }
-.shrink {
-    padding: 0;
-    transition: 0.5s ease-in-out ;
- }
-.shrink img { 
-    width: 3.375em; 
-    transition: 0.5s ease-in-out; 
- }
- .title{
+body{
+  background-color: #000F30;
+}
+.landing-page{
+  background-image: radial-gradient(circle, #90ABD3, #224578, #001533, #000F30);
+  height: 100vh;
+}
+.container{
+  max-width: 1000px;
+  padding-top: 50px;
+  text-align: center;
+  margin: auto;
+}
+.header-img{
+  max-height: 800px;
+  padding-bottom: 50px;
+}
+.title{
   text-align: center;
   max-width: 1000px;
   margin: auto;
@@ -52,27 +30,13 @@ body {
   text-transform: uppercase;
   text-decoration: none;
 }
+.homepage{
+  background-color: #000F30;
+  height: 100vh;
+}
 
-a:link {
-  text-decoration: none;
-}
-a:visited {
-  text-decoration: none;
-  color: white;
-}
-a {
-  text-decoration: none;
-  color:white;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
-a:hover {
-  color: white;
-  text-shadow:0px 0px 30px #90ABD3;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
+
+
+
+
+

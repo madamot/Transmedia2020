@@ -2,46 +2,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
-<title>untitled document</title>
-<link rel="stylesheet" href="screen.css" media="screen">
-<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Digital Media</title>
+  <link rel="icon" href="{% static 'img/logo.png' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
+  <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
-<body> 
- <div id="header" class="grow">
-  <img  src="../static/img/logo.png" width="412" height="82" alt="logo">
-  <div id="title" class="title">
-      <a href="{% url 'blog_list' %}" style="text-decoration: none;"><h1 class="animated fadeIn">Explore</h1></a>
-      <a href="" style="text-decoration: none;"><h1 class="animated fadeIn delay-1s">Experience</h1></a>
-      <a href="" style="text-decoration: none;"><h1 class="animated fadeIn delay-2s">Enlighten</h1></a>
-  </div>
- </div>
- <div>
-
- </div>
-
-
-<script>
-(function() {
-   'use strict';
-   var he = document.getElementById('header');
-   var startShrink = 100;
-   window.addEventListener('scroll',
-      function() {
-         if( window.pageYOffset > startShrink ) {
-             he.classList.remove( 'grow' );  
-             he.classList.add( 'shrink' );           
-          }
-         else {
-             he.classList.remove( 'shrink' );  
-             he.classList.add( 'grow' ); 
-          }
-       },false);
- }());
-</script>
+<body>
+<section class="landing-page">
+<div class="container uk-padding-small">
+  <img class="header-img" src="../static/img/logo.png">
+<div id="title" class="title">
+      <h1 class="animated fadeIn">Explore</h1>
+      <h1 class="animated fadeIn delay-1s">Experience</h1>
+      <h1 class="animated fadeIn delay-2s">Enlighten</h1>
+</div>
+</div>
+</section>
+<section class="homepage">
+<div id="offcanvas-slide" uk-offcanvas>
+    <div class="uk-offcanvas-bar">    
+        <ul class="uk-nav uk-nav-default">
+            <li class="uk-nav-header">Transmedia 2020</li>
+            <li class="uk-nav-divider"></li>
+            <li><a href="">The Exhibtion</a></li>
+            <li><a href="#">Times</a></li>
+            <li><a href="#">Map</a></li>
+            <li><a href="#">About</a></li>
+            <li class="uk-nav-divider"></li>
+            <li><a href="{% url 'students' %}">Students</a></li>
+            <li><a href="{% url 'blog' %}">Yearbook</a></li>
+            <li><a href="{% url 'blog_list' %}">Blog</a></li>
+            <li class="uk-nav-divider"></li>
+            {% if user.is_authenticated %}
+            <li><a href="#">Hi {{ user.firstname }}</a></li>
+            <li><a href="{% url 'blog_new' %}">New Post</a></li>
+            <li><a href="{% url 'password_change' %}">Reset Password</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Log In</a></li>
+            {% endif %}
+        </ul>    
+    </div>
+    </div>
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+    <nav class="uk-navbar-container uk-margin" uk-navbar>
+    <div class="uk-navbar-center">
+    <div class="uk-navbar-center-left"><div>
+        <ul class="uk-navbar-nav">
+            <li><a id="mobile-nav" href="#offcanvas-slide" uk-toggle><i class="fas fa-bars"></i></a></li>
+        </ul>
+        <ul id="desktop-nav" class="uk-navbar-nav">
+          <li><a href="{% url 'blog' %}">The Exhibtion</a></li>
+          <li><a href="{% url 'students' %}">Students</a></li>
+          <li><a href="#">Event Details</a>
+          <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+              <li><a href="#">Times</a></li>
+              <li><a href="#">Map</a></li>
+              <li><a href="#">About</a></li></li>
+          </ul>
+          </div>
+        </ul>
+    </div>
+    </div>
+    <div>
+    <a class="uk-navbar-item uk-logo" href="{% url 'blog' %}">
+        <img src="{% static 'img/logo.png' %}" height="50" width="50">
+    </a>
+    <div class="uk-navbar-center-right"><div>
+        <ul id="desktop-nav" class="uk-navbar-nav">
+        <li><a href="{% url 'blog' %}">Yearbook</a></li>
+        <li><a href="{% url 'blog_list' %}">Blog</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="#">Hi {{ user.firstname }}</a>
+        <div class="uk-navbar-dropdown">
+        <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li><a href="{% url 'blog_new' %}">New Post</a></li>
+            <li><a href="{% url 'password_change' %}">Reset Password</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li></li>
+        </ul>
+        </div>
+        {% else %}
+        <li><a href="{% url 'login' %}">Log In</a></li>
+        {% endif %}
+        </ul>
+        </div> 
+    </div>
+    </nav>
+    </div>
+</section>
+<section class="social">
+    <div class="social-icons">
+        <br>
+        <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></i></a>
+        <a href="#" target="_top"><i class="fas fa-envelope"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>    
+    </div>
+</section>
+<script src="{% static 'js/uikit.min.js' %}"></script>
+<script src="{% static 'js/uikit-icons.min.js' %}"></script>
 </body>
 </html>
