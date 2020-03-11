@@ -1,18 +1,16 @@
-body{
+html, body{
   background-color: #000F30;
-}
-.landing-page{
-  background-image: radial-gradient(circle, #90ABD3, #224578, #001533, #000F30);
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 .container{
   max-width: 1000px;
-  padding-top: 50px;
+  padding-top: 20px;
   text-align: center;
   margin: auto;
 }
 .header-img{
-  max-height: 800px;
+  max-height: 700px;
   padding-bottom: 50px;
 }
 .title{
@@ -30,12 +28,41 @@ body{
   text-transform: uppercase;
   text-decoration: none;
 }
-.homepage{
-  background-color: #000F30;
-  height: 100vh;
+.landing-page{
+  height: 100%;
+  background-image: radial-gradient(circle, #90ABD3, #224578, #001533, #000F30);
 }
-
-
+@media only screen and (max-width: 480px) {
+#title h1{
+  font-size: 30px;
+}
+.header-img{
+  max-height: 450px;
+  padding-bottom: 50px;
+}
+}
+.fa-chevron-down{
+  color: white;
+  font-size: 50px;
+}
+.hompage{
+  height: 100vh;
+  background-color: #000F30;
+}
+.uk-container p{
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  background-color: #000F30;
+  text-transform: uppercase;
+}
+.uk-container h3{
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  background-color: #000F30;
+  text-transform: uppercase; 
+}
 
 
 

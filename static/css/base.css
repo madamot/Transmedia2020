@@ -1,11 +1,16 @@
-body{
+html, body{
   background-color: #000F30;
+  height: 100%;
 }
-.page{
-  background-color: #000F30;
+*{
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: white;
+}
+h1,h2,h3{
+	color: white;
 }
 .container{
-  max-width: 1000px;
+  max-width: 1500px;
   padding-top: 50px;
   text-align: center;
   margin: auto;

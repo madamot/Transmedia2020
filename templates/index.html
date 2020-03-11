@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
   <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
@@ -20,17 +21,6 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-<section class="landing-page">
-<div class="container uk-padding-small">
-  <img class="header-img" src="../static/img/logo.png">
-<div id="title" class="title">
-      <h1 class="animated fadeIn">Explore</h1>
-      <h1 class="animated fadeIn delay-1s">Experience</h1>
-      <h1 class="animated fadeIn delay-2s">Enlighten</h1>
-</div>
-</div>
-</section>
-<section class="homepage">
 <div id="offcanvas-slide" uk-offcanvas>
     <div class="uk-offcanvas-bar">    
         <ul class="uk-nav uk-nav-default">
@@ -46,7 +36,7 @@
             <li><a href="{% url 'blog_list' %}">Blog</a></li>
             <li class="uk-nav-divider"></li>
             {% if user.is_authenticated %}
-            <li><a href="#">Hi {{ user.firstname }}</a></li>
+            <li>Hi {{ user.firstname }}</li>
             <li><a href="{% url 'blog_new' %}">New Post</a></li>
             <li><a href="{% url 'password_change' %}">Reset Password</a></li>
             <li><a href="{% url 'logout' %}">Log Out</a></li></li>
@@ -64,16 +54,15 @@
             <li><a id="mobile-nav" href="#offcanvas-slide" uk-toggle><i class="fas fa-bars"></i></a></li>
         </ul>
         <ul id="desktop-nav" class="uk-navbar-nav">
-          <li><a href="{% url 'blog' %}">The Exhibtion</a></li>
-          <li><a href="{% url 'students' %}">Students</a></li>
-          <li><a href="#">Event Details</a>
+          <li><a href="{% url 'blog' %}">What We Do</a></li>
+          <li><a href="#">The Exhibition</a>
           <div class="uk-navbar-dropdown">
-          <ul class="uk-nav uk-navbar-dropdown-nav">
-              <li><a href="#">Times</a></li>
-              <li><a href="#">Map</a></li>
-              <li><a href="#">About</a></li></li>
-          </ul>
-          </div>
+            <ul class="uk-nav uk-navbar-dropdown-nav">
+              <li><a href="#">Pitch your Project</a></li>
+              <li><a href="#">Event Timetable</a></li>
+              <li><a href="#">Map</a></li></LI>
+            </ul>
+        </div>
         </ul>
     </div>
     </div>
@@ -84,32 +73,85 @@
     <div class="uk-navbar-center-right"><div>
         <ul id="desktop-nav" class="uk-navbar-nav">
         <li><a href="{% url 'blog' %}">Yearbook</a></li>
-        <li><a href="{% url 'blog_list' %}">Blog</a></li>
-        {% if user.is_authenticated %}
-        <li><a href="#">Hi {{ user.firstname }}</a>
+        <li><a href="https://www.facebook.com/Transmedia2020-105715664374722/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" target="_blank"><i class="fas fa-user-circle"></i></a>
         <div class="uk-navbar-dropdown">
         <ul class="uk-nav uk-navbar-dropdown-nav">
-            <li><a href="{% url 'blog_new' %}">New Post</a></li>
-            <li><a href="{% url 'password_change' %}">Reset Password</a></li>
-            <li><a href="{% url 'logout' %}">Log Out</a></li></li>
+          {% if user.is_authenticated %}
+          <li>Hi {{ user.firstname }}</li>
+          <br>
+          <li><a href="{% url 'blog_list' %}">Blog</a></li>
+          <li><a href="{% url 'blog_new' %}">New Post</a></li>
+          <li><a href="{% url 'password_change' %}">Reset Password</a></li>
+          <li><a href="{% url 'logout' %}">Log Out</a></li></li>
+          {% else %}
+          <li><a href="{% url 'blog_list' %}">Blog</a></li>
+          <li><a href="{% url 'login' %}">Log In</a></li>
+          {% endif %}
         </ul>
         </div>
-        {% else %}
-        <li><a href="{% url 'login' %}">Log In</a></li>
-        {% endif %}
-        </ul>
-        </div> 
     </div>
     </nav>
     </div>
-</section>
-<section class="social">
-    <div class="social-icons">
+  <section class="landing-page">
+    <div class="container">
+      <img class="header-img" src="../static/img/logo.png">
+      <div id="title" class="title">
+          <h1 class="animated fadeIn">Explore</h1>
+          <h1 class="animated fadeIn delay-1s">Experience</h1>
+          <h1 class="animated fadeIn delay-2s">Enlighten</h1>
+      </div>
+      <div>
         <br>
-        <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></i></a>
-        <a href="#" target="_top"><i class="fas fa-envelope"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>    
+        <i class="fas fa-chevron-down animated infinite bounce delay-2s"></i>
+      </div>
     </div>
+</section>
+<section class="homepage" style="height: 100vh;">
+  <div class="uk-section">
+    <div class="uk-container">
+        <br>
+        <h3><a href="">The Exhibiton</a></h3>
+        <div class="uk-grid-match uk-child-width-1-3@m" uk-grid>
+        <div>
+          <p>Thursday 2nd April 2020</p>
+        </div>
+        <div>
+          <p>12:00 until 17:00</p>
+        </div>
+        <div>
+          <p><a href="">The Univeristy of Winchester</a></p>
+        </div>  
+        </div>
+    </div>
+  </div>
+<style type="text/css">
+  .students{
+    padding-top: 5vh;
+    max-width: 1500px;
+    text-align: center;
+    margin: auto;
+  }
+</style>
+<div class="students">
+<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
+    {% for user in object_list %}
+        <li>
+            <img class="uk-padding-small" src="../../static/img/student.png" alt="">
+            <div class="uk-position-center uk-panel">
+              <a href="{% url 'student_detail' user.pk %}">
+                <h1 class="student-name">{{ user.firstname }}{{ user.lastname }}</h1>
+              </a>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+</div>
+</div>    
 </section>
 <script src="{% static 'js/uikit.min.js' %}"></script>
 <script src="{% static 'js/uikit-icons.min.js' %}"></script>

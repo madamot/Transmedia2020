@@ -4,7 +4,16 @@
 .uk-navbar-dropdown{
   background-color: #000F30;
 }
+.uk-navbar-dropdown li{
+  border: 5px;
+}
 .uk-navbar-nav li a{
+  color: white;
+  font-size: 15px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: 2.5px;
+}
+.uk-navbar-nav li{
   color: white;
   font-size: 15px;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -59,17 +68,7 @@ a:hover {
 #mobile-nav{
   display: none;
 }}
-.social{
-  height: 10vh;
-}
-.social-icons{
-  text-align: center;
-  font-size: 35px;
-  word-spacing: 20px;
-}
-.social-icons a{
-  color: white;
-}
-.social-icons a:hover{
-  color: #64b5f6;
+
+i{
+  font-size: 25px;
 }

@@ -1,14 +1,37 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<div class="container uk-padding">
-	<ul class="uk-iconnav">
+<style type="text/css">
+	.uk-iconnav{
+		float: right;
+	}
+	.uk-article{
+		background-color: #000B26;
+		border-radius: 10px;
+	}
+	.uk-article-title{
+		text-align: left;
+		color: white;
+		font-size: 50px;
+	}
+	.uk-article-meta{
+		text-align: left;
+		color: white;
+		font-size: 25px;
+	}
+	p{
+		color: white;
+		text-align: left;
+		font-size: 20px;
+	}
+</style>
+<div class="container uk-padding-large">
+	<ul class="uk-iconnav uk-padding-small">
 	    <li><a href="{% url 'blog_edit' blog.pk %}" uk-icon="icon: file-edit"></a></li>
 	    <li><a href="{% url 'blog_delete' blog.pk %}" uk-icon="icon: trash"></a></li>
 	</ul>
-    <article class="uk-article">
+    <article class="uk-article uk-padding-small">
         <h1 class="uk-article-title">{{ blog.title }}</h1>
-        <p class="uk-article-meta">Written by <a href="#">{{ blog.author }}</a> on {{ blog.date }}.</p>
+        <p class="uk-article-meta">Written by <a href="{% url 'student_detail' user.pk %}">{{ blog.author }}</a> on {{ blog.date }}.</p>
         <p>{{ blog.body }}</p>
     </article>
 </div>
